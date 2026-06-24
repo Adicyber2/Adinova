@@ -1,0 +1,50 @@
+
+@import "tailwindcss";
+
+
+.messages::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* Light Theme (default) */
+:root {
+  --bg-main: #f0ccccd7;
+  --text-main: #000000;
+  --card-bg: #e8ecf5c3;
+  --border-color: #a6abb1;
+  --input-bg: #ffffff;
+}
+
+/* Dark Theme */
+.dark {
+  --bg-main: #111827;
+  --text-main: #ffffff;
+  --card-bg: #1f2937;
+  --border-color: #838a96;
+  --input-bg: #111827;
+}
+
+/* Apply globally */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Reusable classes */
+.app-bg {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.input {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
