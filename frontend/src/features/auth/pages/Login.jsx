@@ -25,10 +25,14 @@ const Login = () => {
     await handleLogin(payload)
     navigate("/")
 
+   
+
   }
+  
 
   if(!loading && user){
     return <Navigate to='/' replace/>
+    
   }
 
   return (

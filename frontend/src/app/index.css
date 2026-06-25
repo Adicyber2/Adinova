@@ -1,34 +1,64 @@
-
 @import "tailwindcss";
 
-
-.messages::-webkit-scrollbar{
-    display: none;
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom scrollbars for a clean dashboard look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Scrollbar hiding utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 /* Light Theme (default) */
 :root {
-  --bg-main: #f0ccccd7;
-  --text-main: #000000;
-  --card-bg: #e8ecf5c3;
-  --border-color: #a6abb1;
-  --input-bg: #ffffff;
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --input-bg: #f1f5f9;
 }
 
-/* Dark Theme */
+/* Dark Theme (Obsidian/Kinetic Observatory) */
 .dark {
-  --bg-main: #111827;
-  --text-main: #ffffff;
-  --card-bg: #1f2937;
-  --border-color: #838a96;
-  --input-bg: #111827;
+  --bg-main: #051424;
+  --text-main: #d4e4fa;
+  --card-bg: #0f172a;
+  --border-color: #1e293b;
+  --input-bg: #1c2b3c;
 }
 
 /* Apply globally */
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Reusable classes */

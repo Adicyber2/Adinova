@@ -16,6 +16,7 @@ const Register = () => {
       username,
       password
     }
+    alert("Check Email & Click Verify")
 
     naviget("/login")
   }
